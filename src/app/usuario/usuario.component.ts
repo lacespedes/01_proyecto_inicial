@@ -1,26 +1,25 @@
-import { Component, computed, signal } from '@angular/core';
-import { USUARIOS_FALSOS } from '../usuarios-falsos';
-const indiceAleatorio = Math.floor(Math.random() * USUARIOS_FALSOS.length)
+import { Component, computed, Input, input } from '@angular/core';
 
 @Component({
   selector: 'app-usuario',
   standalone: true,
-  imports: [],
   templateUrl: './usuario.component.html',
   styleUrl: './usuario.component.css'
 })
 export class UsuarioComponent {
-  usuarioSeleccionado = signal(USUARIOS_FALSOS[indiceAleatorio]);
-
-  rutaImagen = computed(() =>'assets/usuarios/' + this.usuarioSeleccionado().avatar);
+  //@Input({required: true}) avatar!: string;
+  //@Input({required: true}) nombre!: string;
+  avatar = input.required<string>();
+  nombre = input.required<string>();
 
   //get rutaImagen() {
-  //  return 'assets/usuarios/' + this.usuarioSeleccionado.avatar;
+  //  return 'assets/usuarios/' + this.avatar;
   //}
+  
+  rutaImagen = computed(() => {
+    return 'assets/usuarios/' + this.avatar();
+  });
 
-  alSeleccionarUsuario() {
-    const indiceAleatorio = Math.floor(Math.random() * USUARIOS_FALSOS.length)
-    this.usuarioSeleccionado.set(USUARIOS_FALSOS[indiceAleatorio]);
-    
-  }
+
+  alSeleccionarUsuario() {}
 }

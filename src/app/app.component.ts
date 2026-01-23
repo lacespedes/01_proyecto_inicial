@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { EncabezadoComponent } from "./encabezado/encabezado.component";
 import { UsuarioComponent } from "./usuario/usuario.component";
+import { USUARIOS_FALSOS } from './usuarios-falsos';
 
 @Component({
   selector: 'app-raiz',
@@ -9,4 +10,6 @@ import { UsuarioComponent } from "./usuario/usuario.component";
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {}
+export class AppComponent {
+  usuarios = USUARIOS_FALSOS;
+}
