@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-usuario',
@@ -10,8 +10,7 @@ export class UsuarioComponent {
   @Input({required: true}) id!: string;
   @Input({required: true}) avatar!: string;
   @Input({required: true}) nombre!: string;
-  //@Output() seleccion = new EventEmitter();
-  seleccion = output<string>();
+  @Output() seleccion = new EventEmitter<string>();
   
   get rutaImagen() {
     return 'assets/usuarios/' + this.avatar;
