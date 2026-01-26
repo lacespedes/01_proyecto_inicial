@@ -7,16 +7,19 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './usuario.component.css'
 })
 export class UsuarioComponent {
-  @Input({required: true}) id!: string;
-  @Input({required: true}) avatar!: string;
-  @Input({required: true}) nombre!: string;
+  @Input({required: true}) usuario!:{
+    id: string;
+    avatar: string;
+    nombre: string;
+  } 
+  
   @Output() seleccion = new EventEmitter<string>();
   
   get rutaImagen() {
-    return 'assets/usuarios/' + this.avatar;
+    return 'assets/usuarios/' + this.usuario.avatar;
   }
   
   alSeleccionarUsuario() {
-    this.seleccion.emit(this.id);
+    this.seleccion.emit(this.usuario.id);
   }
 }
