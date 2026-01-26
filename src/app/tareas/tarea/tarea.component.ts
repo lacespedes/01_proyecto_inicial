@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { type Tarea } from './tarea.model';
 
 @Component({
   selector: 'app-tarea',
@@ -8,5 +9,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './tarea.component.css'
 })
 export class TareaComponent {
-  @Input({required: true}) nombre!: string;
+  @Input({required: true}) tarea!: Tarea
 }
