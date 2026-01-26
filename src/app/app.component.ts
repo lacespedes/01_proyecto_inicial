@@ -13,7 +13,7 @@ import { USUARIOS_FALSOS } from './usuarios-falsos';
 })
 export class AppComponent {
   usuarios = USUARIOS_FALSOS;
-  idUsuariSeleccionado = 'u1';
+  idUsuariSeleccionado?: string;
 
   get usuarioSeleccionado() {
     return this.usuarios.find((usuario) => usuario.id === this.idUsuariSeleccionado)!;
