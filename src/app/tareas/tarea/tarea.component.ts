@@ -1,13 +1,23 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { type Tarea } from './tarea.model';
+import { TarjetaComponent } from "../../compartida/tarjeta/tarjeta.component";
+import { DatePipe } from '@angular/common';
+import { TareasService } from '../tareas.service';
 
 @Component({
   selector: 'app-tarea',
   standalone: true,
-  imports: [],
+  imports: [TarjetaComponent, DatePipe],
   templateUrl: './tarea.component.html',
   styleUrl: './tarea.component.css'
 })
 export class TareaComponent {
   @Input({required: true}) tarea!: Tarea
+  //@Output() terminada = new EventEmitter<string>();
+  private tareaService = inject(TareasService);
+
+  alCompletarTarea() {
+    this.tareaService.eliminarTarea(this.tarea.id);
+    //this.terminada.emit(this.tarea.id);
+  }
 }
