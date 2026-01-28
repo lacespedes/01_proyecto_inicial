@@ -1,13 +1,8 @@
 import { Component, Input, Output } from '@angular/core';
-import { TareaComponent } from "./tarea/tarea.component";
-import { NuevaTareaComponent } from "./nueva-tarea/nueva-tarea.component";
-import { type NuevaTareaInfo } from './tarea/tarea.model';
 import { TareasService } from './tareas.service';
 
 @Component({
   selector: 'app-tareas',
-  standalone: true,
-  imports: [TareaComponent, NuevaTareaComponent],
   templateUrl: './tareas.component.html',
   styleUrl: './tareas.component.css'
 })
