@@ -18,5 +18,5 @@
     }
   },
   "remoteUser": "node",
-  "forwardPorts": [4200]
-}
+  "forwardPorts": [4200],
+  "postCreateCommand": "git config --global core.autocrlf input"}
