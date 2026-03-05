@@ -1,0 +1,22 @@
+{
+  "name": "Angular 18 Debug Practice Container",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "angular-app",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "git.path": "/usr/bin/git" 
+      },
+      "extensions": [
+        "Angular.ng-template",
+        "johnpapa.Angular2",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "eamodio.gitlens"
+      ]
+    }
+  },
+  "remoteUser": "node",
+  "forwardPorts": [4200]
+}
